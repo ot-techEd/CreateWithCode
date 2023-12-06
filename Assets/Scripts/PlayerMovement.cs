@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Transform player;
     public float speed = 2.0f;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveForward(player, speed);
+        MoveForward(transform, speed);
     }
 
     private void MoveForward(Transform player, float speed = 10.0f)
