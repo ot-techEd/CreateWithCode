@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
     public Transform vehicle; //Holds a reference to our vehicle
     private Vector3 offset; //Distance between camera and vehicle
     public float smoothSpeed = 0.1f;
+    public bool isThirdPersonCam = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     private void LateUpdate()
@@ -39,6 +40,10 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = smoothPosition;
 
-        transform.LookAt(vehicle);
+        if (isThirdPersonCam == true)
+        {
+            transform.LookAt(vehicle);  
+        }
+
     }
 }
